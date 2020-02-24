@@ -1,0 +1,4 @@
+README-kafka.md
+*.csv
+*.gz
+test.sh
