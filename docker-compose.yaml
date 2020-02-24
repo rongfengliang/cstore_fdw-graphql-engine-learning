@@ -10,6 +10,8 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
   pgspider-pg_cron:
     image: dalongrong/pgspider:pg_cron
+    volumes: 
+    - "./.pgpass:/var/lib/postgresql/.pgpass"
     ports: 
     - "5432:5432"
     environment: 

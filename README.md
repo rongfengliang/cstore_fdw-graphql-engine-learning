@@ -12,6 +12,12 @@ CREATE TABLE apps (
 SELECT cron.schedule('* * * * *','insert into apps(insert_date) values(now())');
 SELECT * FROM cron.job;
 SELECT cron.unschedule(cronid) FROM cron.job;
+
+// for remote server
+
+INSERT INTO cron.job (schedule, command, nodename, nodeport, database, username)
+VALUES ('* * * * *', 'insert into apps(insert_date) values(now())', 'pgspider-cstore', 5432, 'postgres', 'postgres');
+
 ```
 
 ## cstore
