@@ -1,5 +1,11 @@
 version: '3'
 services:
+  webhook:
+    image: jeffail/benthos
+    volumes:
+    - "./webhook.yaml:/benthos.yaml"
+    ports:
+    - "4195:4195"
   graphql-engine:
     image: hasura/graphql-engine:v1.1.0-beta.3
     ports:
